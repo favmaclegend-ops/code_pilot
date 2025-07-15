@@ -1,0 +1,77 @@
+{
+  "name": "codepilot-ai-extension",
+  "displayName": "CODEPILOT AI",
+  "description": "Intelligent, local-first assistant for code context and change impact analysis.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": ">=1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codepilot.showFileSummary",
+        "title": "CODEPILOT: Show File Summary"
+      },
+      {
+        "command": "codepilot.showWhySummary",
+        "title": "CODEPILOT: Show Why Summary"
+      },
+      {
+        "command": "codepilot.showImpactReport",
+        "title": "CODEPILOT: Show Impact Report"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onCommand:codepilot.showFileSummary",
+    "onCommand:codepilot.showWhySummary",
+    "onCommand:codepilot.showImpactReport"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node ./dist/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "vscode:prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "@types/assert": "^1.5.11",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.14",
+    "@types/vscode": "^1.70.0",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.0",
+    "mocha": "^11.7.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "keywords": [
+    "ai",
+    "codepilot",
+    "code-analysis",
+    "impact-analysis",
+    "code-summary",
+    "local-first",
+    "productivity"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "license": "MIT",
+  "publisher": "your-publisher-name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/codepilot-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/codepilot-ai/issues"
+  },
+  "homepage": "https://github.com/yourusername/codepilot-ai#readme",
+  "icon": "icon.png"
+}
